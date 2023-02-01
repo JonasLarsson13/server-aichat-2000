@@ -19,6 +19,10 @@ const openai = new OpenAIApi(configuration);
 const PORT = process.env.PORT || 9000;
 app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
 
+app.get("/", (req, res) => {
+    res.send("Hello World!");
+})
+
 app.post("/", async (req, res) => {
     const { message } = req.body;
     try {
